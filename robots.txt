@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://ffgomezdental.com/sitemap.xml
