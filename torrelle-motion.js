@@ -147,6 +147,23 @@
     });
   }
 
+  // Touch devices use native scrolling with short, one-time photo entrances.
+  // Clinical comparison images and draggable galleries retain their alignment.
+  if (!desktop) {
+    const mobileMedia = gsap.utils.toArray('section img').filter(img =>
+      !img.closest('.hero, footer, header, .service-card, .review-card, .testimonial-card, .ba, [data-ba], .ba-win, .social-icon-link') &&
+      !img.matches('.torrelle-loader__mark') &&
+      img.getBoundingClientRect().width > 120
+    );
+    mobileMedia.forEach(img => {
+      gsap.fromTo(img, { opacity: 0, clipPath: 'inset(0 0 14% 0)' }, {
+        opacity: 1, clipPath: 'inset(0 0 0% 0)', duration: .75, ease: 'power3.out',
+        clearProps: 'opacity,clipPath',
+        scrollTrigger: { trigger: img, start: 'top 93%', once: true }
+      });
+    });
+  }
+
   let ticking = false;
   const updateProgress = () => {
     const max = document.documentElement.scrollHeight - innerHeight;
