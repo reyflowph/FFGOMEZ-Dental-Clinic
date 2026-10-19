@@ -7,6 +7,53 @@
 
   document.documentElement.classList.add('torrelle-motion-ready');
 
+  function setupSmartNavigation() {
+    const header = document.querySelector('#siteHeader');
+    if (!header) return;
+
+    let lastY = Math.max(0, window.scrollY);
+    let visible = true;
+    let tickingNav = false;
+
+    header.style.willChange = 'transform';
+    header.style.transition = reduce ? 'none' : 'transform 360ms cubic-bezier(.22,1,.36,1)';
+
+    const setVisible = (show) => {
+      if (show === visible) return;
+      visible = show;
+      header.style.transform = show ? 'translate3d(0,0,0)' : 'translate3d(0,-110%,0)';
+      header.style.pointerEvents = show ? '' : 'none';
+    };
+
+    const updateNavigation = () => {
+      const currentY = Math.max(0, window.scrollY);
+      const delta = currentY - lastY;
+      const menuOpen = header.querySelector('[aria-expanded="true"]');
+
+      if (document.body.classList.contains('torrelle-loading') || menuOpen || currentY <= 24) {
+        setVisible(true);
+      } else if (delta > 6 && currentY > 96) {
+        setVisible(false);
+      } else if (delta < -4) {
+        setVisible(true);
+      }
+
+      lastY = currentY;
+      tickingNav = false;
+    };
+
+    addEventListener('scroll', () => {
+      if (!tickingNav) {
+        tickingNav = true;
+        requestAnimationFrame(updateNavigation);
+      }
+    }, { passive: true });
+
+    header.addEventListener('focusin', () => setVisible(true));
+  }
+
+  setupSmartNavigation();
+
   const progress = document.createElement('div');
   progress.className = 'torrelle-progress';
   progress.setAttribute('aria-hidden', 'true');
