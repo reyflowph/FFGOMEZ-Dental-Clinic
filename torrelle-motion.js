@@ -29,6 +29,10 @@
       const currentY = Math.max(0, window.scrollY);
       const delta = currentY - lastY;
       const menuOpen = header.querySelector('[aria-expanded="true"]');
+      if (Math.abs(delta) < 5 && currentY > 24 && !menuOpen) {
+        tickingNav = false;
+        return;
+      }
 
       if (document.body.classList.contains('torrelle-loading') || menuOpen || currentY <= 24) {
         setVisible(true);
