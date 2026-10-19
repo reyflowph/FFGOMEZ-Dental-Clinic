@@ -147,19 +147,25 @@
     });
   }
 
-  // Touch devices use native scrolling with short, one-time photo entrances.
-  // Clinical comparison images and draggable galleries retain their alignment.
+  // Match desktop scroll-linked movement while preserving native touch scrolling.
+  // Comparison sliders own their image transforms, so animate only regular photos.
   if (!desktop) {
     const mobileMedia = gsap.utils.toArray('section img').filter(img =>
-      !img.closest('.hero, footer, header, .service-card, .review-card, .testimonial-card, .ba, [data-ba], .ba-win, .social-icon-link') &&
+      !img.closest('.hero, footer, header, .review-card, .testimonial-card, .ba, [data-ba], .ba-win, .social-icon-link') &&
       !img.matches('.torrelle-loader__mark') &&
       img.getBoundingClientRect().width > 120
     );
     mobileMedia.forEach(img => {
-      gsap.fromTo(img, { opacity: 0, clipPath: 'inset(0 0 14% 0)' }, {
-        opacity: 1, clipPath: 'inset(0 0 0% 0)', duration: .75, ease: 'power3.out',
-        clearProps: 'opacity,clipPath',
-        scrollTrigger: { trigger: img, start: 'top 93%', once: true }
+      gsap.fromTo(img, { clipPath: 'inset(0 0 100% 0)' }, {
+        clipPath: 'inset(0 0 0% 0)', duration: 1.12, ease: 'power3.inOut',
+        scrollTrigger: { trigger: img, start: 'top 88%', once: true }
+      });
+      gsap.fromTo(img, { scale: 1.07, yPercent: -3 }, {
+        scale: 1.02, yPercent: 3, ease: 'none',
+        scrollTrigger: {
+          trigger: img, start: 'top bottom', end: 'bottom top',
+          scrub: .8, invalidateOnRefresh: true
+        }
       });
     });
   }
