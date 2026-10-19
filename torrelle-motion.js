@@ -151,10 +151,21 @@
   // Comparison sliders own their image transforms, so animate only regular photos.
   if (!desktop) {
     const mobileMedia = gsap.utils.toArray('section img').filter(img =>
-      !img.closest('.hero, footer, header, .review-card, .testimonial-card, .ba, [data-ba], .ba-win, .social-icon-link') &&
+      !img.closest('.hero, footer, header, .ba, [data-ba], .ba-win, .social-icon-link') &&
       !img.matches('.torrelle-loader__mark') &&
       img.getBoundingClientRect().width > 120
     );
+    const comparisonCards = gsap.utils.toArray('.ba, [data-ba]');
+    comparisonCards.forEach(card => {
+      gsap.fromTo(card, { scale: 1.07, yPercent: -3 }, {
+        scale: 1.02, yPercent: 3, ease: 'none',
+        scrollTrigger: {
+          trigger: card, start: 'top bottom', end: 'bottom top',
+          scrub: .8, invalidateOnRefresh: true
+        }
+      });
+    });
+
     mobileMedia.forEach(img => {
       gsap.fromTo(img, { clipPath: 'inset(0 0 100% 0)' }, {
         clipPath: 'inset(0 0 0% 0)', duration: 1.12, ease: 'power3.inOut',
