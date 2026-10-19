@@ -243,6 +243,7 @@ footer .social-icon-link{width:40px;height:40px}
   }
 }
 </style>
+<link rel="stylesheet" href="torrelle-motion.css">
 </head>
 <body>
 <header class="nav">
@@ -1080,5 +1081,9 @@ footer .social-icon-link{width:40px;height:40px}
 <script>
 (function(){const b=document.querySelector('.patient-menu-toggle');const n=document.querySelector('.nav-links');if(!b||!n)return;b.addEventListener('click',()=>{const open=n.classList.toggle('mobile-open');b.setAttribute('aria-expanded',String(open));b.textContent=open?'×':'☰';});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('mobile-open');b.setAttribute('aria-expanded','false');b.textContent='☰';}));})();
 </script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="torrelle-motion.js"></script>
 </body>
 </html>

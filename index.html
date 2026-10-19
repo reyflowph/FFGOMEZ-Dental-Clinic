@@ -209,6 +209,7 @@ src="https://www.facebook.com/tr?id=1074060358495158&ev=PageView&noscript=1"
   .review-text { margin-top: 0.75rem; font-size: 0.85rem; line-height: 1.6; color: var(--muted-foreground); display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
   .review-more { margin-top: 0.75rem; display: inline-block; font-size: 0.75rem; color: var(--gold); text-decoration: none; }
   .review-more:hover { text-decoration: underline; }
+  .review-card-new .review-text { -webkit-line-clamp: 8; }
   .review-panel-bottom { margin-top: 1.5rem; display: flex; align-items: center; justify-content: center; }
 
   /* EXPERIENCE ORA */
@@ -255,6 +256,8 @@ src="https://www.facebook.com/tr?id=1074060358495158&ev=PageView&noscript=1"
   }
   .contact-form input:focus, .contact-form textarea:focus { outline: none; box-shadow: 0 0 0 2px rgba(217,181,121,0.6); }
   .contact-form textarea { resize: none; }
+  .card-payment-logos { display:flex; align-items:center; gap:0.65rem; flex-wrap:wrap; margin-top:0.9rem; }
+  .card-payment-logo { width:auto; height:30px; border-radius:4px; display:block; }
   .info-blocks { display: grid; gap: 2rem; align-content: start; }
   .info-block-head { display: flex; align-items: center; gap: 0.75rem; color: var(--gold); }
   .info-block-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--foreground); }
@@ -497,6 +500,7 @@ footer .social-icon-link{width:40px;height:40px}
   }
 }
 </style>
+<link rel="stylesheet" href="torrelle-motion.css">
 </head>
 <body>
 <header class="nav" id="nav">
@@ -756,6 +760,24 @@ footer .social-icon-link{width:40px;height:40px}
 </div>
 </div>
 <div class="review-scroller" id="reviewScroller">
+<div class="review-card review-card-new">
+<div class="review-top"><div class="review-avatar">P</div><div><div class="review-name">Patient Review</div><div class="review-when">New review</div></div></div>
+<div class="stars" aria-label="5 out of 5 stars"><span aria-hidden="true" style="color:#d9b579;letter-spacing:2px">★★★★★</span></div>
+<p class="review-text">Had a very positive experience with Dr Fidel and his assistant, Grace. I had 20 teeth done with a mixture of bridges and individual crowns to both upper and lower teeth. The results a month on are still amazing. I get lots of compliments about my new smile and even up close the teeth look real. My chronic gingivitis cleared up and my nightguard helps with teeth grinding at night. I would not hesitate to recommend Dr Fidel Gomez and his world-class work for it was quick painless and very affordable.</p>
+<a class="review-more" href="https://share.google/nZm7eq5isHrxfVCF4" rel="noreferrer noopener" target="_blank">View on Google</a>
+</div>
+<div class="review-card review-card-new">
+<div class="review-top"><div class="review-avatar">P</div><div><div class="review-name">Patient Review</div><div class="review-when">New review</div></div></div>
+<div class="stars" aria-label="5 out of 5 stars"><span aria-hidden="true" style="color:#d9b579;letter-spacing:2px">★★★★★</span></div>
+<p class="review-text">I’m very happy with my experience at this dental clinic. The dentist was professional, gentle, and explained everything clearly, and the staff were friendly and accommodating. I’m also very satisfied with the quality of my dental treatment and would definitely recommend this clinic.</p>
+<a class="review-more" href="https://share.google/nZm7eq5isHrxfVCF4" rel="noreferrer noopener" target="_blank">View on Google</a>
+</div>
+<div class="review-card review-card-new">
+<div class="review-top"><div class="review-avatar">P</div><div><div class="review-name">Patient Review</div><div class="review-when">New review</div></div></div>
+<div class="stars" aria-label="5 out of 5 stars"><span aria-hidden="true" style="color:#d9b579;letter-spacing:2px">★★★★★</span></div>
+<p class="review-text">Thank you Dr. Gomez for making me achieve the dream smile i’ve been longing for a longtime, the Zirconia crowns and veneers were perfectly made, your level of expertise and craftsmanship is truly exceptional. Every details of what you did for my teeth compliments well with my face, it was made to perfection. I was lost of words when i saw the final results, it’s so beautiful. Best decision i’ve ever made for myself. It was a smooth and hassle-free experience because you’re so professional, friendly and always ready to answer all my questions together with your assistant grace who did great job as well. You and your team are the best. So, to someone who is looking for the best dental care and services, you are on the right place and page, choose Dr. Gomez and FFGomez Dental. You will not regret anything. 🫶💯☺️💜</p>
+<a class="review-more" href="https://share.google/nZm7eq5isHrxfVCF4" rel="noreferrer noopener" target="_blank">View on Google</a>
+</div>
 <div class="review-card">
 <div class="review-top">
 <div class="review-avatar">R</div>
@@ -926,6 +948,19 @@ footer .social-icon-link{width:40px;height:40px}
 <h4 class="info-block-title">Schedule</h4>
 </div>
 <div class="info-block-body">Monday – Saturday: 9:00 AM – 4:00 PM</div>
+</div>
+<div class="reveal" style="transition-delay:180ms">
+<div class="info-block-head">
+<svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><rect height="14" rx="2" width="20" x="2" y="5"></rect><path d="M2 10h20"></path></svg>
+<h4 class="info-block-title">Payment Options</h4>
+</div>
+<div class="info-block-body">Major credit cards accepted at the clinic.
+<div class="card-payment-logos" aria-label="Accepted credit cards">
+<img alt="Visa" class="card-payment-logo" src="assets/visa.svg"/>
+<img alt="Mastercard" class="card-payment-logo" src="assets/mastercard.svg"/>
+<img alt="American Express" class="card-payment-logo" src="assets/amex.svg"/>
+</div>
+</div>
 </div>
 <div class="reveal" style="transition-delay:200ms"><div class="info-block-head"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M22 6l-10 7L2 6"></path><rect height="16" rx="2" width="20" x="2" y="4"></rect></svg><h4 class="info-block-title">Email</h4></div><div class="info-block-body"><a href="mailto:ffgdentalclinic@yahoo.com">ffgdentalclinic@yahoo.com</a></div></div><div class="reveal" style="transition-delay:240ms"><div class="info-block-head"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="9"></circle><path d="M8 12h8M12 8v8"></path></svg><h4 class="info-block-title">Social Media</h4></div><div class="info-block-body"><div aria-label="Social media links" class="social-icon-row"><a aria-label="Facebook" class="social-icon-link" href="https://www.facebook.com/ffgomezdentalclinic" rel="noreferrer noopener" target="_blank" title="Facebook"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.3-1.5 1.6-1.5h1.7V4.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V14h2.8v8h3.4Z" fill="currentColor"></path></svg></a><a aria-label="Instagram" class="social-icon-link" href="https://instagram.com/ffgomezdental" rel="noreferrer noopener" target="_blank" title="Instagram"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="18" rx="5" stroke="currentColor" stroke-width="2" width="18" x="3" y="3"></rect><circle cx="12" cy="12" fill="none" r="4" stroke="currentColor" stroke-width="2"></circle><circle cx="17.4" cy="6.7" fill="currentColor" r="1.2"></circle></svg></a><a aria-label="TikTok" class="social-icon-link" href="https://tiktok.com/@ffgomezdental" rel="noreferrer noopener" target="_blank" title="TikTok"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M14.6 3c.3 2.2 1.6 3.6 3.8 3.8v3.1c-1.5 0-2.8-.5-3.8-1.2v6.1a6 6 0 1 1-5.2-5.9v3.2a2.9 2.9 0 1 0 2 2.7V3h3.2Z" fill="currentColor"></path></svg></a></div></div></div>
 </div>
@@ -1165,5 +1200,9 @@ footer .social-icon-link{width:40px;height:40px}
 <!-- Botpress chat widget -->
 <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
 <script src="https://files.bpcontent.cloud/2026/07/13/02/20260713021155-CHHZHDG8.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="torrelle-motion.js"></script>
 </body>
 </html>
