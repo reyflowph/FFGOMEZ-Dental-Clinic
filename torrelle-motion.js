@@ -8,7 +8,7 @@
   document.documentElement.classList.add('torrelle-motion-ready');
 
   function setupSmartNavigation() {
-    const header = document.querySelector('#siteHeader');
+    const header = document.querySelector('#siteHeader, header#nav');
     if (!header) return;
 
     let lastY = Math.max(0, window.scrollY);
