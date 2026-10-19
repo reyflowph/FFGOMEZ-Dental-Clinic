@@ -36,7 +36,7 @@
 
       if (document.body.classList.contains('torrelle-loading') || menuOpen || currentY <= 24) {
         setVisible(true);
-      } else if (delta > 6 && currentY > 96) {
+      } else if (delta >= 5 && currentY > 96) {
         setVisible(false);
       } else if (delta < -4) {
         setVisible(true);
